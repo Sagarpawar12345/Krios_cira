@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- This scenario is used to Login and Logout for the Internal User and the Board Member  -->
+
+<suite name="Cira Management">
+	<listeners>
+		<listener class-name="com.ciranet.testlisteners.TestListener" />
+		<listener class-name="com.ciranet.testlisteners.LoginListener" />
+	</listeners>
+
+	<test thread-count="1" name="Login Test Case-Internal User" enabled="true">
+		<classes>
+			<class name="com.ciranet.loginpage.testcases.LoginPageTest">
+				<methods>
+					<parameter name="usertype" value="internaluser"></parameter>
+					<parameter name="username" value="abhay.ranade"></parameter>
+
+					<include name="verifyValidLogin"></include>
+					<include name="verifyLogout"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test thread-count="1" name="Login Test Case-Boardmember User"
+		enabled="true">
+		<classes>
+			<class name="com.ciranet.loginpage.testcases.LoginPageTest">
+				<methods>
+					<parameter name="usertype" value="boardmember"></parameter>
+					<parameter name="username" value="sirajuddinzafar@yahoo.com"></parameter>
+					<include name="verifyValidLogin"></include>
+					<include name="verifyLogout"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> 

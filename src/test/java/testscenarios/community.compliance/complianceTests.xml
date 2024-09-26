@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Scenario file is used to test all Compliance scenarios -->
+
+<suite name="Cira Management">
+	<groups>
+		<run>
+			<include name="Smoke" />
+			<include name="Functional" />
+			<!-- <exclude name="sanity"/> Uncomment this line to exclude sanity
+			group -->
+		</run>
+	</groups>
+
+	<listeners>
+		<listener class-name="com.ciranet.testlisteners.TestListener" />
+		<listener class-name="com.ciranet.testlisteners.LoginListener" />
+	</listeners>
+
+	<parameter name="usertype" value="internaluser"></parameter>
+	<parameter name="username" value="abhay.ranade"></parameter>
+
+	<test thread-count="1" name="Open Violations Log Page" enabled="true">
+		<classes>
+			<class
+				name="com.ciranet.community.compliance.testcases.OpenViolationsLogPageTest">
+			</class>
+		</classes>
+	</test>
+
+
+</suite> 

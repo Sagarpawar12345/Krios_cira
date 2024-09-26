@@ -1,0 +1,7 @@
+/target/
+/surefire-reports/
+/hs_err_pid3176.log
+.classpath
+/bin/
+.settings/
+.factorypath
